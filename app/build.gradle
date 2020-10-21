@@ -20,6 +20,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "provider"
+    productFlavors
+            {
+                appGallery
+                        {
+                            dimension "provider"
+                            versionNameSuffix "HMS"
+                        }
+                googlePlay
+                        {
+                            dimension "provider"
+                            versionNameSuffix "GMS"
+                        }
+            }
 }
 
 dependencies {
@@ -30,4 +45,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    appGalleryImplementation 'com.orhanobut:logger:2.2.0'
+//    playStoreImplementation 'com.klinkerapps:logger:+'
 }
