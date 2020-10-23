@@ -3,10 +3,13 @@ package com.example.flavorstest;
 
 public class SomeApp {
 
-    public String store;
+    PrintService printService = new PlayPrintService();
 
     public SomeApp() {
-        this.store = "Google Play!!!";
-        System.out.println(this.store);
+
+    }
+
+    public PrintService getPrintService() {
+        return printService;
     }
 }
